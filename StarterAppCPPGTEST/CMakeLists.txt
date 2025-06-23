@@ -1,3 +1,12 @@
+#*****************************************************************
+# Copyright (C) 2017 - Robert Valler - All rights reserved.
+#
+# This file is part of the project: StarterApp
+#
+# This project can not be copied and/or distributed
+# without the express permission of the copyright holder
+#****************************************************************/
+
 cmake_minimum_required(VERSION 3.5.0)
 project ( StarterAppGTEST )
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
@@ -17,11 +26,12 @@ include_directories(${CMAKE_SOURCE_DIR}/src)
 
 #SOURCE FILES
 file(GLOB SOURCES
-    ${CMAKE_SOURCE_DIR}/src/*.cpp
     ${CMAKE_SOURCE_DIR}/test/*.cpp
 )
 
-file(GLOB HEADERS ${CMAKE_SOURCE_DIR}/src/*.h)
+file(GLOB HEADERS
+    ${CMAKE_SOURCE_DIR}/test/*.h
+)
 
 #GENERATE
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS} )

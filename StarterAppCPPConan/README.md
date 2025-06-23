@@ -1,2 +1,2 @@
 # Starter Application
-Basic CPP starter project using cmake
+Basic CPP starter project using cmake and conan.  

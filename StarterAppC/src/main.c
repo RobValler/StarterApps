@@ -1,5 +1,5 @@
 /*****************************************************************
- * Copyright (C) 2017-2019 Robert Valler - All rights reserved.
+ * Copyright (C) 2017 Robert Valler - All rights reserved.
  *
  * This file is part of the project: StarterAppC
  *
@@ -7,10 +7,11 @@
  * without the express permission of the copyright holder
  *****************************************************************/
 
+#include <stdio.h>
 
 int main(int argc, char *argv[])
 {
-
+    printf("test app\n");
 
 
 

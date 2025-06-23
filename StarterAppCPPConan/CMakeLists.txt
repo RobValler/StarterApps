@@ -1,3 +1,11 @@
+#*****************************************************************
+#* Copyright (C) 2017- Robert Valler - All rights reserved.
+#*
+#* This file is part of the project: StarterApp
+#*
+#* This project can not be copied and/or distributed
+#* without the express permission of the copyright holder
+#*****************************************************************
 cmake_minimum_required(VERSION 3.22.0)
 project ( starter_app_conan )
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
@@ -8,6 +16,8 @@ set (Wfloat-conversion)
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
+#conan_basic_setup() # for ${CONAN_LIBS}
+
 
 #PACKAGES
 find_package(Threads REQUIRED)
@@ -15,12 +25,17 @@ find_package(Threads REQUIRED)
 #INCLUDES
 include_directories(${CMAKE_SOURCE_DIR}/src})
 
+#CONFIG FILES
+file(GLOB_RECURSE CONFIG
+    ${CMAKE_SOURCE_DIR}/conanfile.txt
+)
+
 #SOURCE FILES
-file(GLOB SOURCES
+file(GLOB_RECURSE SOURCES
     ${CMAKE_SOURCE_DIR}/src/*.cpp
 )
 
-file(GLOB HEADERS
+file(GLOB_RECURSE HEADERS
     ${CMAKE_SOURCE_DIR}/src/*.h
 )
 
@@ -28,5 +43,7 @@ file(GLOB HEADERS
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS} )
 target_link_libraries(${PROJECT_NAME}
                 ${CMAKE_THREAD_LIBS_INIT}
-                CONAN_PKG::boost)
+                #${CONAN_LIBS}
+                CONAN_PKG::boost
+)
 

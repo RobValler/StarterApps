@@ -17,6 +17,7 @@ set (Wfloat-conversion)
 
 # Conan stuff
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+#conan_basic_setup()
 conan_basic_setup(TARGETS)
 
 #PACKAGES ROS2
@@ -40,7 +41,8 @@ file(GLOB HEADERS
 #GENERATE - main app
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS} )
 target_link_libraries(${PROJECT_NAME}
-               CONAN_PKG::boost
+               ${CONAN_LIBS}
+               #CONAN_PKG::boost
 )
                 
 #GENERATE - ROS2 
