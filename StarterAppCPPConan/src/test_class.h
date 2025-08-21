@@ -7,16 +7,17 @@
  * without the express permission of the copyright holder
  *****************************************************************/
 
-#include "test_class.h"
+#ifndef TEST_CLASS__H
+#define TEST_CLASS__H
+
+class CTestClass {
+public:
+    CTestClass() =default;
+    ~CTestClass() =default;
+
+    int Start();
+    int Stop();
+};
 
 
-#include <boost/algorithm/string.hpp>
-
-
-
-int main(int argc, char *argv[])
-{
-    CTestClass test;
-    test.Start();
-    test.Stop();
-}
+#endif // TEST_CLASS__H

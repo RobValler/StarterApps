@@ -9,14 +9,16 @@
 
 #include "test_class.h"
 
+#include <iostream>
 
-#include <boost/algorithm/string.hpp>
+int CTestClass::Start() {
 
+    std::cout << "Start" << std::endl;
+    return 0;
+}
 
+int CTestClass::Stop() {
 
-int main(int argc, char *argv[])
-{
-    CTestClass test;
-    test.Start();
-    test.Stop();
+    std::cout << "Stop" << std::endl;
+    return 0;
 }
